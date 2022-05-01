@@ -1,6 +1,7 @@
 package GUI;
 
-import PIA.TA032PIAE1;
+import static PIA.TuringMachine.*;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -10,6 +11,7 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.WHITE);
         ImageIcon imagenUANL= new ImageIcon("UANL.png");
         UANLlabel.setIcon(new ImageIcon(imagenUANL.getImage().getScaledInstance(UANLlabel.getWidth(), UANLlabel.getHeight(), Image.SCALE_SMOOTH)));
         ImageIcon imagenFCFM= new ImageIcon("FCFM.png");
@@ -138,8 +140,10 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_IngresoCadenaTextFieldActionPerformed
 
     private void ComprobarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Cadena válida.");
-        JOptionPane.showMessageDialog(null, "Cadena inválida.");
+        if(validar(reasignar(IngresoCadenaTextField.getText()))==true)
+            JOptionPane.showMessageDialog(null, "Cadena válida.");
+        else 
+            JOptionPane.showMessageDialog(null, "Cadena inválida.");
     }//GEN-LAST:event_ComprobarButtonActionPerformed
 
     public static void main(String args[]) {
