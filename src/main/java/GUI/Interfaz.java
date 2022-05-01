@@ -1,6 +1,7 @@
 package GUI;
 
-import PIA.TA032PIAE1;
+import static PIA.TuringMachine.*;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -10,6 +11,7 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setBackground(Color.WHITE);
         ImageIcon imagenUANL= new ImageIcon("UANL.png");
         UANLlabel.setIcon(new ImageIcon(imagenUANL.getImage().getScaledInstance(UANLlabel.getWidth(), UANLlabel.getHeight(), Image.SCALE_SMOOTH)));
         ImageIcon imagenFCFM= new ImageIcon("FCFM.png");
@@ -20,7 +22,6 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        UANLlabel1 = new javax.swing.JLabel();
         IngresoCadenaTextField = new javax.swing.JTextField();
         ComprobarButton = new javax.swing.JButton();
         UANLlabel = new javax.swing.JLabel();
@@ -29,21 +30,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        UANLlabel1.setIcon(new javax.swing.ImageIcon("D:\\OneDrive\\OneDrive - Universidad Autonoma de Nuevo León\\Teoría de Autómatas - Prof. Yazmany Jahaziel Guerrero Ceja\\TA-032-PIA-E1\\UANL.png")); // NOI18N
-        UANLlabel1.setMaximumSize(new java.awt.Dimension(60, 60));
-        UANLlabel1.setMinimumSize(new java.awt.Dimension(60, 60));
-        UANLlabel1.setName(""); // NOI18N
-        UANLlabel1.setPreferredSize(new java.awt.Dimension(60, 60));
-        UANLlabel1.setRequestFocusEnabled(false);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("TA 032 PIA E1");
-
-        IngresoCadenaTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresoCadenaTextFieldActionPerformed(evt);
-            }
-        });
 
         ComprobarButton.setText("Comprobar");
         ComprobarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -133,13 +121,11 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IngresoCadenaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoCadenaTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresoCadenaTextFieldActionPerformed
-
     private void ComprobarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Cadena válida.");
-        JOptionPane.showMessageDialog(null, "Cadena inválida.");
+        if(validar(reasignar(IngresoCadenaTextField.getText())))
+            JOptionPane.showMessageDialog(null, "Cadena válida.");
+        else
+            JOptionPane.showMessageDialog(null, "Cadena inválida.");
     }//GEN-LAST:event_ComprobarButtonActionPerformed
 
     public static void main(String args[]) {
@@ -179,7 +165,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel FCFMlabel;
     private javax.swing.JTextField IngresoCadenaTextField;
     private javax.swing.JLabel UANLlabel;
-    private javax.swing.JLabel UANLlabel1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
