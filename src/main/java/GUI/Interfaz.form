@@ -33,9 +33,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Angel Manuel Tapia Avitia - 1905895"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -185,7 +182,7 @@
           <Font name="Consolas" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="L = {a&#xb2;&#x207f;bbb|n&#x2265;1}"/>
+        <Property name="text" type="java.lang.String" value="L = {a&#xb2;&#x207f;bbb|n&#x2265;0}"/>
         <Property name="alignmentX" type="float" value="0.5"/>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>

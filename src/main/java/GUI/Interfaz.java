@@ -89,7 +89,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("L = {a²ⁿbbb|n≥1}");
+        jLabel3.setText("L = {a²ⁿbbb|n≥0}");
         jLabel3.setAlignmentX(0.5F);
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 132, 470, 50));
@@ -126,11 +126,6 @@ public class Interfaz extends javax.swing.JFrame {
         jMenu1.add(jMenuItem4);
 
         jMenuItem1.setText("Angel Manuel Tapia Avitia - 1905895");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -141,7 +136,7 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ComprobarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComprobarButtonActionPerformed
-        if(validar(reasignar(IngresoCadenaTextField.getText())))
+        if(validar(reasignar(IngresoCadenaTextField.getText()), IngresoCadenaTextField.getText()))
             JOptionPane.showMessageDialog(null, "Cadena válida.");
         else
             JOptionPane.showMessageDialog(null, "Cadena inválida.");
@@ -155,10 +150,6 @@ public class Interfaz extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error, no se pudo abrir el simulador.");
         }
     }//GEN-LAST:event_jButton1MouseClicked
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

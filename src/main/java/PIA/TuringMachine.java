@@ -14,9 +14,14 @@ public class TuringMachine {
         return banda;
     }
     
-    public static boolean validar(char[] banda){
+    public static boolean validar(char[] banda, String cadena){
         int p = 0;
         int state = 0;
+        for(int i = 1; i <= cadena.length(); i++){
+            if(banda[i] == '-'){
+                return false;
+            }
+        }
         while(p!=-1){
             switch(state){
                 case 0:
@@ -69,7 +74,7 @@ public class TuringMachine {
                     break;
                 case 6:
                     if(banda[p]=='-'){
-                        p = -1;
+                        p = -1;                    
                     }else return false;
                     break;
             }
